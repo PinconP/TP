@@ -54,6 +54,10 @@ public class FileArrayList implements IFile {
         return message;
     }
     public boolean equals(Object test){
+        if (test==null){
+            return false;
+        }
+
         if (!( test instanceof FileArrayList)){
             return false;
         }

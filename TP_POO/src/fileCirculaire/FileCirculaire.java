@@ -77,6 +77,9 @@ public class FileCirculaire implements IFileBornee {
         return message;
     }
     public boolean equals(Object test){
+        if (test==null){
+            return false;
+        }
         if (!( test instanceof FileCirculaire)){
             return false;
         }
@@ -84,7 +87,7 @@ public class FileCirculaire implements IFileBornee {
         FileCirculaire testcopie = (FileCirculaire) test;
         if(this.taille==testcopie.taille) {
             for (int i = 0; i < this.taille; i++) {
-                if (this.queue[(this.head + i) % this.capacity()] == testcopie.queue[this.head + i] % this.capacity()) {
+                if (this.queue[(this.head + i) % this.capacity()] == testcopie.queue[this.head + i] % this.capacity()) {//si c'est général on ne peut pas utiliser ==, on doit utiliser equals
                     egal++;
                 }
             }
