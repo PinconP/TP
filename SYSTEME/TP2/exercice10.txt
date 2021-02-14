@@ -1,0 +1,6 @@
+Exercice 10
+
+echo `grep 'g[0-9]$' liste.txt | sort -k 3| head -n 1 | cut -f1 -d" " `
+
+echo `grep 'g[0-9]$' liste.txt | sort -k 3| tail -n 1 | cut -f1 -d" " `
+
